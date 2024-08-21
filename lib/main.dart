@@ -12,7 +12,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   Future<List<User>> fetchUsers() async {
-    final response = await http.get(Uri.parse('https://reqres.in/api/users?page=2'));
+    final response =
+        await http.get(Uri.parse('https://reqres.in/api/users?page=2'));
 
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body)['data'];
